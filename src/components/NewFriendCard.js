@@ -3,7 +3,7 @@ import styles from './NewFriendCard.module.css'
 
 const NewFriendCard = ({ onClick = () => {} }) => {
     return (
-        <div onClick={onClick} className={styles.cardContainer}>
+        <div onClick={() => onClick()} className={styles.cardContainer} role="listitem">
             <h3>+ Add New Friend</h3>
         </div>
     )

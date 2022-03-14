@@ -25,3 +25,30 @@ test('Displays a button for the specified actionName prop', () => {
 
     expect(screen.getByRole('button')).toHaveTextContent('Do something')
 })
+
+test('Calls the specified onAction function with the person\'s id when the action button is clicked', () => {
+    const mockCallback = jest.fn()
+
+    render(<PersonCard person={fakePerson} actionName="Click Me!" onAction={mockCallback} />)
+
+    fireEvent.click(screen.getByText('Click Me!'))
+
+    expect(mockCallback).toHaveBeenCalledWith(fakePerson.id)
+})
+
+test('Calls the specified onCardClicked function with the person\'s id when the container is clicked', () => {
+    const mockCallback = jest.fn()
+    render(<PersonCard person={fakePerson} actionName="Hi I'm a button!" onCardClicked={mockCallback} />)
+
+    fireEvent.click(screen.getByRole('listitem'))
+
+    expect(mockCallback).toHaveBeenCalledWith(fakePerson.id)
+})
+
+test('Doesn\'t display any button if no actionName or onAction callback are specified', () => {
+    render(<PersonCard person={fakePerson} actionName="Don't display me!" />)
+    expect(screen.queryByText('Don\'t display me!')).not.toBeInTheDocument()
+
+    render(<PersonCard person={fakePerson} onAction={() => {}} />)
+    expect(screen.queryByRole('button')).not.toBeInTheDocument()
+})

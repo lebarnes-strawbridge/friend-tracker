@@ -27,9 +27,9 @@ const PeopleList = ({
                     />
                     </div>
             ))}
-            {allowAdditions && <div className={styles.peopleListItem}>
+            {allowAdditions && (<div className={styles.peopleListItem}>
                 <NewFriendCard onClick={() => navigate('/new-friend')} />
-            </div>}
+            </div>)}
         </div>
     )
 }
