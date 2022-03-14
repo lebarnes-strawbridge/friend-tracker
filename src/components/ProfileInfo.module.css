@@ -1,0 +1,21 @@
+h3 {
+    border-bottom: 1px dotted #ccc;
+}
+
+.profilePicContainer {
+    text-align: center;
+}
+
+.profilePic {
+    border-radius: 50%;
+    border: 3px solid blue;
+}
+
+.detailHeading {
+    border-bottom: 1px dotted #ccc;
+}
+
+.actionButton {
+    margin-top: 16px;
+    width: 100%;
+}

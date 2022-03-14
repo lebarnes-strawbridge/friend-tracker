@@ -1,0 +1,38 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.profilePicLeft {
+    align-items: center;
+    flex: 1;
+    display: flex;
+}
+
+.profilePicWrap {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: black;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.profilePic {
+    width: 100%;
+}
+
+.cardDetails {
+    flex: 1;
+}
+
+.detailsContainer {
+    display: flex;
+}
+
+.actionButton {
+    width: 100%
+}
