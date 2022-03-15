@@ -2,36 +2,7 @@ import { PeopleList } from "./PeopleList";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import { Router } from "react-router-dom";
-
-export const fakePeople = [
-    {
-      id: '123',
-      name: 'Marcia Pierce',
-      profilePicUrl: `${process.env.PUBLIC_URL}/friend-1.jpg`,
-      age: 35,
-      birthday: 'September 4',
-      bio: 'Freelance writer from Chicago',
-      interests: ['Traveling', 'Languages', 'Collecting souvenirs']
-    }, 
-    {
-      id: '234',
-      name: 'Joy Hunter',
-      profilePicUrl: `${process.env.PUBLIC_URL}/friend-2.jpg`,
-      age: 24,
-      birthday: 'December 3',
-      bio: 'Graduate student at UNC Wilmington',
-      interests: ['Reality shows', 'History', 'Museums']
-    },
-    {
-      id: '345',
-      name: 'Kent Cole',
-      profilePicUrl: `${process.env.PUBLIC_URL}/friend-3.jpg`,
-      age: 54,
-      birthday: 'September 7',
-      bio: 'Stock broker from Philadelphia',
-      interests: ['Current Events', 'Speaking', 'Wine']
-    }
-  ]
+import {fakePeople} from '../test-utils/fakes'
 
 test('Renders as many list items as people', () => {
     render(<Router><PeopleList people={fakePeople} /></Router>)
